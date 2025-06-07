@@ -1,0 +1,113 @@
+/* EmailLink.css */
+.email-link-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.email-link {
+  color: #e74c3c;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.email-link:hover {
+  color: #c0392b;
+  border-bottom: 1px solid #c0392b;
+}
+
+.email-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.action-button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  color: #666;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button:hover {
+  background: #f8f9fa;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.mailto-button:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+  color: #2196f3;
+}
+
+.copy-button:hover {
+  background: #f3e5f5;
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+
+.copied-message {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+  animation: fadeInOut 3s ease;
+}
+
+.copied-message::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #27ae60;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  20% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .email-link-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .email-actions {
+    align-self: flex-start;
+  }
+  
+  .copied-message {
+    top: -45px;
+    left: 0;
+    transform: none;
+  }
+}

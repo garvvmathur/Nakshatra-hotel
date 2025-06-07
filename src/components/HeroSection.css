@@ -1,0 +1,537 @@
+/* HeroSection.css - Enhanced styling for Hotel Nakshatra */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: visible; /* Allow dropdown to extend outside */
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(44, 62, 80, 0.4) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  z-index: 2;
+  overflow: visible; /* Allow content to extend outside if needed */
+}
+
+/* Hero Content Styling */
+.hero-content {
+  margin-bottom: 4rem;
+  max-width: 800px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: var(--font-weight-light);
+  letter-spacing: -0.02em;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  line-height: 1.4;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* Alternative text styling options */
+.hero-content p.with-background {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Booking Form Styling with More Transparency */
+.booking-form-hero {
+  display: flex;
+  gap: 2.5rem;
+  background: rgba(255, 255, 255, 0.65); /* More transparent */
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(25px); /* Increased blur for better readability */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly more visible border */
+  animation: slideInUp 1.5s ease-out 0.3s both;
+  max-width: 1000px;
+  width: 100%;
+  align-items: flex-end;
+  overflow: visible; /* Ensure dropdown can extend outside form */
+  position: relative;
+  z-index: 100;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  flex: 1;
+  position: relative;
+  margin-right: 1rem;
+  overflow: visible; /* Allow dropdown to extend outside */
+  z-index: 1000;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+  min-width: auto;
+  flex: 0 0 auto;
+}
+
+.form-group label {
+  color: #2c3e50;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8); /* Add subtle text shadow for better readability */
+}
+
+.form-group label::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #e74c3c;
+  border-radius: 2px;
+}
+
+/* Enhanced input styling for better visibility on transparent background */
+.date-input, .guests-input {
+  padding: 1.4rem 1.2rem;
+  border: 2px solid #bdc3c7; /* Slightly darker border for better contrast */
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95); /* Slightly more opaque inputs for readability */
+  color: #2c3e50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
+  min-height: 56px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.date-input::placeholder,
+.guests-input::placeholder {
+  color: #2c3e50; /* Change from #4a5050 to #2c3e50 */
+  opacity: 1;
+  font-weight: var(--font-weight-medium);
+}
+
+.date-input::-moz-placeholder,
+.guests-input::-moz-placeholder {
+  color: #2c3e50; /* Change from #4a5050 to #2c3e50 */
+  opacity: 1;
+}
+
+.date-input::-webkit-input-placeholder,
+.guests-input::-webkit-input-placeholder {
+  color: #2c3e50; /* Change from #4a5050 to #2c3e50 */
+  opacity: 1;
+}
+
+/* Edge specific placeholder fix */
+.date-input::-ms-input-placeholder,
+.guests-input::-ms-input-placeholder {
+  color: #2c3e50;
+  opacity: 1;
+}
+
+.date-input:focus, .guests-input:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 
+    0 0 0 4px rgba(231, 76, 60, 0.15),
+    0 6px 20px rgba(231, 76, 60, 0.2);
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+.date-input:hover, .guests-input:hover {
+  border-color: #95a5a6;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Enhanced Guests Dropdown */
+.guests-dropdown {
+  position: relative;
+  z-index: 10000;
+  overflow: visible;
+  width: 100%;
+}
+
+.guests-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98); /* Slightly more opaque dropdown */
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* Stronger shadow for better definition */
+  z-index: 10000;
+  overflow: visible;
+  margin-top: 0.5rem;
+  animation: dropdownSlide 0.3s ease-out;
+  transform: translateZ(0);
+  backdrop-filter: blur(10px); /* Add backdrop filter to dropdown */
+}
+
+.guest-option {
+  width: 100%;
+  padding: 1.4rem 1.2rem;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  color: #2c3e50; /* Make sure this is dark */
+  border-bottom: 1px solid #f8f9fa;
+  position: relative;
+  z-index: 10001;
+}
+
+
+.guest-option:last-child {
+  border-bottom: none;
+}
+
+.guest-option:hover {
+  background: #f8f9fa;
+  color: #e74c3c;
+  transform: translateX(8px);
+  z-index: 10002;
+}
+
+/* Enhanced Book Now Button */
+.book-now-hero-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 1.4rem 3.5rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.35);
+  position: relative;
+  overflow: hidden;
+  min-height: 56px;
+  white-space: nowrap;
+}
+
+.book-now-hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.book-now-hero-btn:hover::before {
+  left: 100%;
+}
+
+.book-now-hero-btn:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(231, 76, 60, 0.45);
+}
+
+.book-now-hero-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.35);
+}
+
+/* Date input calendar icon styling */
+.date-input::-webkit-calendar-picker-indicator {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23e74c3c"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>') no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.date-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Alternative: Even more transparent option */
+.booking-form-hero.ultra-transparent {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.scroll-indicator::before {
+  content: '↓';
+  font-size: 2rem;
+  display: block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .booking-form-hero {
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+    max-width: 900px;
+  }
+  
+  .form-group {
+    min-width: 180px;
+  }
+  
+  .book-now-hero-btn {
+    padding: 1.4rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 120px;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    margin-bottom: 2rem;
+  }
+  
+  .booking-form-hero {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+    border-radius: 15px;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.75); /* Slightly less transparent on mobile for better readability */
+    backdrop-filter: blur(20px);
+  }
+  
+  .form-group {
+    min-width: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  
+  .form-group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  
+  .book-now-hero-btn {
+    padding: 1.4rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  
+  .hero-overlay {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    margin-bottom: 2rem;
+  }
+  
+  .booking-form-hero {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.8); /* Even less transparent on small screens */
+    backdrop-filter: blur(15px);
+  }
+  
+  .date-input, .guests-input {
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .book-now-hero-btn {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content,
+  .booking-form-hero,
+  .scroll-indicator {
+    animation: none;
+  }
+  
+  .book-now-hero-btn::before {
+    display: none;
+  }
+  
+  .hero-background {
+    background-attachment: scroll;
+  }
+}
+
+/* High DPI and Retina Display Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-background {
+    background-image: url('../../public/images/hotel-hero-bg.jpg');
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .booking-form-hero {
+    background: rgba(44, 62, 80, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .form-group label {
+    color: #000000;
+    /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); */
+  }
+  
+  .date-input, .guests-input {
+    background: rgba(52, 73, 94, 0.9);
+    color: #1e1f1f;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .guest-option {
+    background: rgba(52, 73, 94, 0.95);
+    color: #3d4e52;
+  }
+}
