@@ -1,0 +1,455 @@
+.booking-page {
+  max-width: 700px;
+  margin: 120px auto 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.08);
+  padding: 2.5rem 2rem;
+}
+
+.booking-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  color: #2c3e50;
+}
+
+.booking-form .form-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.booking-form label {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: #fff;
+  color: #2c3e50;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.03);
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: #e74c3c;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231,76,60,0.08);
+}
+
+.booking-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.room-options {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 100%;
+  justify-content: center; /* Center the meal cards */
+}
+
+.room-options-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.room-options label {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: #2c3e50;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.room-options select {
+  margin-left: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 7px;
+  border: 1.5px solid #e0e0e0;
+  font-size: 1rem;
+  background: #fff;
+  color: #2c3e50;
+  transition: border 0.2s;
+}
+
+.room-options select:focus {
+  border-color: #e74c3c;
+  outline: none;
+}
+
+.room-options .checkbox-group {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.room-options .checkbox-group label {
+  font-weight: 400;
+  font-size: 0.98rem;
+  color: #444;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem 0.35rem 0.6rem;
+  border: 1px solid #e0e0e0;
+  transition: border 0.2s, background 0.2s;
+  cursor: pointer;
+}
+
+.room-options .checkbox-group input[type="checkbox"] {
+  margin-right: 0.5em;
+  accent-color: #e74c3c;
+}
+
+.room-options .checkbox-group label:hover,
+.room-options .checkbox-group input[type="checkbox"]:focus + label {
+  border-color: #e74c3c;
+  background: #fbeeea;
+}
+
+.room-price {
+  margin-top: 0.7rem;
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 1.1rem;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.98rem;
+  color: #2c3e50;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  display: block;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.10);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(231, 76, 60, 0.18);
+}
+
+.booking-confirmation {
+  max-width: 600px;
+  margin: 120px auto 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(44,62,80,0.08);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.booking-form .phone-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking-form .country-code-select {
+  min-width: 110px;
+  padding: 0.9rem 0.5rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: #fff;
+  color: #2c3e50;
+  transition: border 0.2s;
+}
+
+.booking-form .country-code-select:focus {
+  border-color: #e74c3c;
+  outline: none;
+}
+
+.roomtype-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.roomtype-label {
+  font-family: var(--font-body); /* Match other labels */
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-bottom: 0.2rem; /* Reduce space below label */
+  margin-left: 0;        /* Align with cards */
+}
+
+.roomtype-cards {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;   /* Add space for left card shadow */
+  padding-right: 12px;  /* Add space for right card shadow */
+}
+
+.roomtype-cards::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.roomtype-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(44,62,80,0.06);
+  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 170px;
+  max-width: 200px;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.18s;
+  outline: none;
+  position: relative;
+}
+
+.roomtype-card.selected,
+.roomtype-card:focus {
+  border: 2.5px solid #e74c3c;
+  box-shadow: 0 8px 28px rgba(231,76,60,0.10);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.roomtype-card:hover {
+  border: 2px solid #c0392b;
+  box-shadow: 0 8px 28px rgba(231,76,60,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.roomtype-image {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.08);
+}
+
+.roomtype-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.roomtype-price {
+  margin-top: 0.1rem;
+  font-size: 0.98rem;
+  color: #888;
+  text-align: center;
+}
+
+.roomtype-price-premium {
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 0.18em 0.7em;
+  display: inline-block;
+}
+
+.meal-card {
+  flex: 1 1 0;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(44,62,80,0.06);
+  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 140px;
+  max-width: 200px;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.18s;
+  outline: none;
+  position: relative;
+  user-select: none;
+}
+
+.meal-card.selected,
+.meal-card:focus,
+.meal-card:focus-visible {
+  border: 2.5px solid #e74c3c;
+  box-shadow: 0 8px 28px rgba(231,76,60,0.10);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.meal-card:hover {
+  border: 2px solid #c0392b;
+  box-shadow: 0 8px 28px rgba(231,76,60,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.meal-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.meal-price {
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 0.18em 0.7em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.meal-desc {
+  font-size: 0.97rem;
+  color: #666;
+  margin-top: 0.2rem;
+}
+
+.form-error-banner {
+  width: 100%;
+  background: #fff0f0;
+  color: #e74c3c;
+  border: 1.5px solid #e74c3c;
+  border-radius: 7px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(231,76,60,0.07);
+}
+
+@media (max-width: 900px) {
+  .room-options {
+    gap: 1rem;
+  }
+  .meal-card {
+    padding: 1rem 0.7rem;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .room-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  .meal-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .roomtype-cards {
+    gap: 1rem;
+    /* keep flex-wrap: nowrap and overflow-x: auto */
+  }
+  .roomtype-card {
+    min-width: 140px;
+    max-width: 160px;
+    padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+  }
+  .roomtype-image {
+    height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-page, .booking-confirmation {
+    padding: 1.2rem 0.5rem;
+  }
+  .booking-form .form-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .roomtype-cards {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .roomtype-card {
+    min-width: 180px;
+    max-width: 220px;
+  }
+}

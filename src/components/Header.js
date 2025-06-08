@@ -8,7 +8,7 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const currentPath = window.location.pathname;
 
-    if (currentPath === '/gallery') {
+    if (currentPath === '/gallery' || currentPath === '/booking') {
       if (sectionId === 'home') {
         window.location.href = '/';
       } else {

@@ -10,17 +10,18 @@ const HeroSection = () => {
   const [showGuestDropdown, setShowGuestDropdown] = useState(false);
 
   const handleBooking = () => {
+    // Store arrival, departure as yyyy-mm-dd for compatibility with BookingPage
     const bookingData = {
-      arrival: arrivalDate,
-      departure: departureDate,
-      guests: guests
+      arrival: arrivalDate.toISOString().split('T')[0],
+      departure: departureDate.toISOString().split('T')[0],
+      adults: guests,
+      children: 0
     };
-    
-    localStorage.setItem('bookingData', JSON.stringify(bookingData));
+    localStorage.setItem('nakshatra_booking_prefill', JSON.stringify(bookingData));
     window.location.href = '/booking';
   };
 
-  const guestOptions = [1, 2, 3];
+  const guestOptions = [1, 2];
 
   return (
     <section id="home" className="hero-section">
@@ -73,7 +74,8 @@ const HeroSection = () => {
                     {guestOptions.map(num => (
                       <button
                         key={num}
-                        onClick={() => {
+                        type="button"
+                        onMouseDown={() => {
                           setGuests(num);
                           setShowGuestDropdown(false);
                         }}

@@ -9,6 +9,7 @@ import Reviews from './components/Reviews';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import GalleryPage from './components/GalleryPage';
+import BookingPage from './components/BookingPage';
 import './App.css';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
   
   if (currentPath === '/gallery') {
     return <GalleryPage />;
+  }
+  if (currentPath === '/booking') {
+    return <BookingPage />;
   }
 
   return (
