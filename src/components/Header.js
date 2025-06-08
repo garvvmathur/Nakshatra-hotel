@@ -6,6 +6,17 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
+    const currentPath = window.location.pathname;
+
+    if (currentPath === '/gallery') {
+      if (sectionId === 'home') {
+        window.location.href = '/';
+      } else {
+        window.location.href = `/#${sectionId}`;
+      }
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       const headerHeight = 80;
@@ -31,6 +42,8 @@ const Header = () => {
           src="/images/hotel-logo.svg" 
           alt="Nakshatra Hotel Logo" 
           className="logo-image"
+          onClick={() => window.location.href = '/'}
+          style={{ cursor: 'pointer' }}
         />
       </div>
 

@@ -24,7 +24,7 @@ const RoomsSection = () => {
   ];
 
   const handleRoomClick = (roomType) => {
-    window.location.href = `/gallery?room=${roomType.toLowerCase()}`;
+    window.location.href = `/gallery#${roomType.toLowerCase()}`;
   };
 
   return (
@@ -36,6 +36,7 @@ const RoomsSection = () => {
             key={room.id} 
             className="room-card"
             onClick={() => handleRoomClick(room.type)}
+            style={{cursor: 'pointer'}}
           >
             <div className="room-image-container">
               <img src={room.image} alt={room.type} />

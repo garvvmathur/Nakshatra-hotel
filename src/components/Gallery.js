@@ -55,7 +55,7 @@ const Gallery = () => {
       </div>
       
       <div className="gallery-footer-overlay">
-        <p><a href='/gallery' className="show-more-link">Show&nbsp;More</a></p>
+        <a href='/gallery' className="show-more-link">Show&nbsp;More</a>
       </div>
     </section>
   );

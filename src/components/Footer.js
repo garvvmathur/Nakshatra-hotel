@@ -21,9 +21,10 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <strong>Contact at:</strong>
-              <p><a href="tel:+912962250909">+91-2962-250909</a></p>
-              <p><a href="tel:+919460900909">+91-9460-909-0909</a></p>
-              <p><a href="tel:+919462944797">+91-9462-944-4797</a></p>
+              <p><a href="tel:+912962250909">+91-2962-250-909</a></p>
+              <p><a href="tel:+919460900909">+91-9460-90-0909</a></p>
+              <p><a href="tel:+919462944797">+91-9462-94-4797</a></p>
+              <p><a href="tel:+919414101000">+91-9414-10-1000</a></p>
             </div>
             <div className="contact-item">
               <strong>or Email at:</strong>

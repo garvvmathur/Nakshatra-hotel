@@ -64,7 +64,7 @@ const AboutSection = () => {
               <p>Premium amenities at budget-friendly rates</p>
             </div>
             <div className="highlight-item">
-              <h4>🌟 Since 2013</h4>
+              <h4>🌟 Since 2014</h4>
               <p>Over a decade of trusted hospitality in Banswara</p>
             </div>
           </div>
