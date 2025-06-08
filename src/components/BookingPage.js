@@ -33,6 +33,9 @@ const COUNTRY_CODES = [
 ];
 
 const BookingPage = () => {
+  // Replace with your Google Apps Script Web App URL
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwaB2phFqZKxVnlNtbs-i8MMWrKmnAVSHhj8PCbu_qYhYp67b9OG6OOdMBy0QXZwQIIow/exec';
+
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -49,9 +52,11 @@ const BookingPage = () => {
     special: '',
     agree: false,
   });
+  
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
   const [showFormError, setShowFormError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Added for loading state
 
   useEffect(() => {
     const prefill = localStorage.getItem('nakshatra_booking_prefill');
@@ -100,25 +105,65 @@ const BookingPage = () => {
     if (!form.adults || form.adults < 1) errs.adults = 'At least 1 adult';
     if (form.children < 0) errs.children = 'Cannot be negative';
     if (!form.roomType) errs.roomType = 'Select room type';
-    // Removed breakfast required validation
     if (!form.agree) errs.agree = 'Required';
     return errs;
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const errs = validate();
-    setErrors(errs);
-    if (Object.keys(errs).length === 0) {
-      setShowFormError(false);
+  // Updated handleSubmit with Google Sheets integration
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const errs = validate();
+  setErrors(errs);
+  
+  if (Object.keys(errs).length === 0) {
+    setShowFormError(false);
+    setIsSubmitting(true);
+
+    try {
+      const bookingData = {
+        fullName: form.fullName,
+        email: form.email,
+        phone: `${form.countryCode} ${form.phone}`,
+        arrivalDate: form.arrival,
+        departureDate: form.departure,
+        adults: parseInt(form.adults),
+        children: parseInt(form.children),
+        roomType: form.roomType,
+        breakfast: form.breakfast === 'with' ? 'Yes' : 'No',
+        lunch: form.lunch ? 'Yes' : 'No',
+        dinner: form.dinner ? 'Yes' : 'No',
+        totalPrice: totalPrice(),
+        specialRequests: form.special || 'None'
+      };
+
+      // const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // This bypasses CORS
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData)
+      });
+
+      // With no-cors, we can't read the response, so we assume success
       setSubmitted(true);
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 50);
-    } else {
-      setShowFormError(true);
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('❌ Failed to submit booking. Please try again.');
     }
-  };
+    
+    setIsSubmitting(false);
+  } else {
+    setShowFormError(true);
+  }
+};
+
+
 
   const selectedRoom = ROOM_TYPES.find(r => r.key === form.roomType);
 
@@ -136,8 +181,18 @@ const BookingPage = () => {
       <>
         <Header />
         <div className="booking-confirmation">
-          <h2>Thank you for your booking request!</h2>
-          <p>We have received your details and will contact you soon to confirm your reservation.</p>
+          <h2>🎉 Thank you for your booking request!</h2>
+          <p>We have received your details and saved them to our system. Our team will contact you soon to confirm your reservation.</p>
+          <div className="confirmation-details">
+            <h3>Booking Summary:</h3>
+            <p><strong>Name:</strong> {form.fullName}</p>
+            <p><strong>Email:</strong> {form.email}</p>
+            <p><strong>Phone:</strong> {form.countryCode} {form.phone}</p>
+            <p><strong>Check-in:</strong> {form.arrival}</p>
+            <p><strong>Check-out:</strong> {form.departure}</p>
+            <p><strong>Room Type:</strong> {form.roomType}</p>
+            <p><strong>Total Price:</strong> INR {totalPrice()} per night</p>
+          </div>
         </div>
         <Footer />
       </>
@@ -150,6 +205,7 @@ const BookingPage = () => {
       <div className="booking-page">
         <h1>Book Your Stay</h1>
         <form className="booking-form" onSubmit={handleSubmit} noValidate>
+          {/* Your existing form fields remain exactly the same */}
           <div className="form-row">
             <label>
               Full Name*
@@ -222,7 +278,8 @@ const BookingPage = () => {
               {errors.children && <span className="error">{errors.children}</span>}
             </label>
           </div>
-          {/* Room Type Premium Selection */}
+          
+          {/* Room Type Selection - keeping your existing code */}
           <div className="form-row roomtype-row">
             <div className="roomtype-label">Room Type*</div>
             <div className="roomtype-cards">
@@ -245,11 +302,12 @@ const BookingPage = () => {
             </div>
             {errors.roomType && <span className="error">{errors.roomType}</span>}
           </div>
-          {/* Meal options appear after room selection */}
+          
+          {/* Meal options - keeping your existing code */}
           {form.roomType && (
             <div className="form-row">
               <div className="room-options">
-                {/* Breakfast Card */}
+                {/* Your existing meal cards code */}
                 <div
                   className={`meal-card${form.breakfast === 'with' ? ' selected' : ''}`}
                   tabIndex={0}
@@ -274,7 +332,7 @@ const BookingPage = () => {
                   <div className="meal-price">+INR 200</div>
                   <div className="meal-desc">{form.breakfast === 'with' ? 'Included' : 'Not included'}</div>
                 </div>
-                {/* Lunch Card */}
+                
                 <div
                   className={`meal-card${form.lunch ? ' selected' : ''}`}
                   tabIndex={0}
@@ -299,7 +357,7 @@ const BookingPage = () => {
                   <div className="meal-price">+INR 300</div>
                   <div className="meal-desc">{form.lunch ? 'Included' : 'Not included'}</div>
                 </div>
-                {/* Dinner Card */}
+                
                 <div
                   className={`meal-card${form.dinner ? ' selected' : ''}`}
                   tabIndex={0}
@@ -330,6 +388,7 @@ const BookingPage = () => {
               </div>
             </div>
           )}
+          
           <div className="form-row">
             <label>
               Special Requests
@@ -343,13 +402,18 @@ const BookingPage = () => {
               {errors.agree && <span className="error">{errors.agree}</span>}
             </label>
           </div>
+          
           {/* Show form error above submit button */}
           {showFormError && (
             <div className="form-error-banner">
               Please fill all required fields correctly before submitting.
             </div>
           )}
-          <button type="submit" className="submit-btn">Submit Booking Request</button>
+          
+          {/* Updated submit button with loading state */}
+          <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? '⏳ Submitting...' : '📋 Submit Booking Request'}
+          </button>
         </form>
       </div>
       <Footer />
