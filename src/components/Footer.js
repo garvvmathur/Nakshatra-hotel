@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-left">
           <div className="footer-logo">
             <img 
-              src="/images/hotel-logo-nobg.svg" 
+              src={process.env.PUBLIC_URL + '/images/hotel-logo-nobg.svg'} 
               alt="Hotel Name Logo" 
               className="logo-image logo"
             />

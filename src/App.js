@@ -1,4 +1,3 @@
-// App.js - Back to original structure
 import React, {useEffect} from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -12,12 +11,14 @@ import GalleryPage from './components/GalleryPage';
 import BookingPage from './components/BookingPage';
 import './App.css';
 
-function App() {
-  const currentPath = window.location.pathname;
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+// Create a HomePage component that contains all your home sections
+function HomePage() {
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
-    if (hash && currentPath === '/') {
+    if (hash && hash !== '/') {
       setTimeout(() => {
         const element = document.getElementById(hash);
         if (element) {
@@ -30,16 +31,9 @@ function App() {
             behavior: 'smooth'
           });
         }
-      }, 100); // Small delay to ensure page is loaded
+      }, 100);
     }
-  }, [currentPath]);
-  
-  if (currentPath === '/gallery') {
-    return <GalleryPage />;
-  }
-  if (currentPath === '/booking') {
-    return <BookingPage />;
-  }
+  }, []);
 
   return (
     <div className="App">
@@ -52,6 +46,18 @@ function App() {
       <AboutSection />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+    </Router>
   );
 }
 

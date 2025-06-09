@@ -71,7 +71,9 @@ const AboutSection = () => {
         </div>
         
         <div className="about-image">
-          <img src="/images/hotel-exterior.jpg" alt="Hotel Nakshatra Banswara - Best Luxury Hotel in Banswara Rajasthan" />
+          <img 
+            src={process.env.PUBLIC_URL + '/images/hotel-exterior.jpg'} 
+            alt="Hotel Nakshatra Banswara - Best Luxury Hotel in Banswara Rajasthan" />
           
           {/* Location info for local SEO */}
           <div className="location-info">

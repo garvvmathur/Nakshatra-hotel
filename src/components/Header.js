@@ -1,32 +1,43 @@
-// Header.js
 import React, { useState } from 'react';
 import './Header.css';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (sectionId) => {
-    const currentPath = window.location.pathname;
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait a bit for navigation, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const headerHeight = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
-    if (currentPath === '/gallery' || currentPath === '/booking') {
-      if (sectionId === 'home') {
-        window.location.href = '/';
-      } else {
-        window.location.href = `/#${sectionId}`;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      // We're already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
-      return;
-    }
-
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
     }
     setIsMenuOpen(false); // Close menu after navigation
   };
@@ -38,13 +49,14 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img 
-          src="/images/hotel-logo.svg" 
-          alt="Nakshatra Hotel Logo" 
-          className="logo-image"
-          onClick={() => window.location.href = '/'}
-          style={{ cursor: 'pointer' }}
-        />
+        <Link to="/">
+          <img 
+            src={process.env.PUBLIC_URL + '/images/hotel-logo.svg'}
+            alt="Nakshatra Hotel Logo" 
+            className="logo-image"
+            style={{ cursor: 'pointer' }}
+          />
+        </Link>
       </div>
 
       {/* Hamburger Menu Button */}
@@ -72,12 +84,13 @@ const Header = () => {
         >
           Rooms
         </button>
-        <button 
-          className="nav-link" 
-          onClick={() => scrollToSection('gallery')}
+        <Link 
+          to="/gallery" 
+          className="nav-link"
+          onClick={() => setIsMenuOpen(false)}
         >
           Gallery
-        </button>
+        </Link>
         <button 
           className="nav-link" 
           onClick={() => scrollToSection('about')}
@@ -94,12 +107,13 @@ const Header = () => {
         >
           Phone
         </a>
-        <button 
+        <Link 
+          to="/booking" 
           className="book-now-btn"
-          onClick={() => window.location.href = '/booking'}
+          onClick={() => setIsMenuOpen(false)}
         >
           Book&nbsp;Now
-        </button>
+        </Link>
       </div>
     </header>
   );
