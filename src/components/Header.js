@@ -84,13 +84,12 @@ const Header = () => {
         >
           Rooms
         </button>
-        <Link 
-          to="/gallery" 
-          className="nav-link"
-          onClick={() => setIsMenuOpen(false)}
+        <button 
+          className="nav-link" 
+          onClick={() => scrollToSection('gallery')}
         >
           Gallery
-        </Link>
+        </button>
         <button 
           className="nav-link" 
           onClick={() => scrollToSection('about')}
