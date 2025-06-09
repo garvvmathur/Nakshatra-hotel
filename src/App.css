@@ -32,18 +32,6 @@ body {
   min-height: 100vh;
 }
 
-body, .App {
-  padding-top: 80px; /* Adjust to match your header height */
-}
-
-/* For smaller screens where header might be taller */
-@media (max-width: 768px) {
-  body, .App {
-    padding-top: 100px; /* Increase if needed */
-  }
-}
-
-
 html {
   scroll-behavior: smooth;
 }

@@ -249,6 +249,10 @@
   .gallery-page .gallery-hero {
     padding: 6rem 1rem 2rem;
   }
+
+  .gallery-page {
+    padding-top: 100px; /* Increase for mobile if header is taller */
+  }
   
   .gallery-page .gallery-filters {
     padding: 2rem 1rem;

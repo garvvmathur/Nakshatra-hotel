@@ -398,7 +398,7 @@
 
 @media (max-width: 900px) {
   .booking-page {
-    padding: 1.2rem 0.7rem;
+    padding: 8rem 1rem 1rem;
   }
   .roomtype-cards {
     gap: 1rem;
@@ -411,7 +411,7 @@
 
 @media (max-width: 700px) {
   .booking-page, .booking-confirmation {
-    padding: 0.7rem 0;
+    padding: 8rem 1rem 1rem ;
     margin: 80px auto 20px;
     max-width: 100vw;
     border-radius: 0;
@@ -522,7 +522,7 @@
 
 @media (max-width: 400px) {
   .booking-page, .booking-confirmation {
-    padding: 0.3rem 0;
+    padding: 8rem 1rem 1rem;
   }
   .booking-form {
     padding: 0.7rem 0.2rem;
