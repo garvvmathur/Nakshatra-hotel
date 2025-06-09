@@ -34,7 +34,7 @@ const COUNTRY_CODES = [
 
 const BookingPage = () => {
   // Replace with your Google Apps Script Web App URL
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwaB2phFqZKxVnlNtbs-i8MMWrKmnAVSHhj8PCbu_qYhYp67b9OG6OOdMBy0QXZwQIIow/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyyDamA27YV8se3Qk9mmXRWY7Tsf0BUNggouapVu2o1CLbiK-6fs6v6uVs_QAYzXOtj/exec';
 
   const [form, setForm] = useState({
     fullName: '',
