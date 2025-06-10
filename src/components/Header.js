@@ -48,28 +48,31 @@ const Header = () => {
 
   return (
     <header className="header">
+      <div className="header-left">
       <div className="logo">
-        <Link to="/">
-          <img 
-            src={process.env.PUBLIC_URL + '/images/hotel-logo.svg'}
-            alt="Nakshatra Hotel Logo" 
-            className="logo-image"
-            style={{ cursor: 'pointer' }}
-          />
-        </Link>
-      </div>
+          <Link to="/">
+            <img 
+              src={process.env.PUBLIC_URL + '/images/hotel-logo.svg'}
+              alt="Nakshatra Hotel Logo" 
+              className="logo-image"
+              style={{ cursor: 'pointer' }}
+            />
+          </Link>
+        </div>
 
-      {/* Hamburger Menu Button */}
-      <button 
-        className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
+        <div className="hamburger-menu">
+        {/* Hamburger Menu Button */}
+        <button 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        </div>
+        </div>
       {/* Navigation Menu */}
       <nav className={`navigation ${isMenuOpen ? 'open' : ''}`}>
         <button 

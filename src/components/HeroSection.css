@@ -514,7 +514,7 @@
 /* High DPI and Retina Display Optimization */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero-background {
-    background-image: url('../../public/images/hotel-hero-bg.jpg');
+    background-image: url('../../public/images/hotel-hero-bg.png');
   }
 }
 

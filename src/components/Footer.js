@@ -28,7 +28,6 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <strong>or Email at:</strong>
-              <p>
                 <EmailLink 
                   email="nakshatrahotelbsw@gmail.com"
                   subject="Hotel Inquiry"
@@ -36,7 +35,6 @@ const Footer = () => {
                 >
                   nakshatrahotelbsw@gmail.com
                 </EmailLink>
-              </p>
               </div>
           </div>
         </div>

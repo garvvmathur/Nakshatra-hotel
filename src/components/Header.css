@@ -19,8 +19,6 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
   cursor: pointer;
   z-index: 1001;
 }
@@ -150,6 +148,20 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .header-left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .hamburger-menu {
+    justify-self: end;
+  }
+
   .header {
     padding: 1rem;
   }
@@ -214,6 +226,20 @@
 }
 
 @media (max-width: 480px) {
+  .header-left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    justify-self: start;
+  }
+
+  .hamburger-menu {
+    justify-self: end;
+  }
+
   .header {
     padding: 0.75rem;
   }
