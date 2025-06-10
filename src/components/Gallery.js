@@ -5,19 +5,19 @@ const Gallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const images = [
-    `${process.env.PUBLIC_URL}/images/gallery1.png`,
-    `${process.env.PUBLIC_URL}/images/gallery2.png`,
-    `${process.env.PUBLIC_URL}/images/gallery3.png`,
-    `${process.env.PUBLIC_URL}/images/gallery4.png`,
-    `${process.env.PUBLIC_URL}/images/gallery5.png`,
-    `${process.env.PUBLIC_URL}/images/gallery6.png`,
-    `${process.env.PUBLIC_URL}/images/gallery7.png`,
-    `${process.env.PUBLIC_URL}/images/gallery8.png`,
-    `${process.env.PUBLIC_URL}/images/gallery9.png`,
-    `${process.env.PUBLIC_URL}/images/gallery10.png`,
-    `${process.env.PUBLIC_URL}/images/gallery11.png`,
-    `${process.env.PUBLIC_URL}/images/gallery12.png`,
-    `${process.env.PUBLIC_URL}/images/gallery13.png`
+    `${process.env.PUBLIC_URL}/images/gallery1.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery2.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery3.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery4.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery5.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery6.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery7.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery8.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery9.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery10.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery11.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery12.webp`,
+    `${process.env.PUBLIC_URL}/images/gallery13.webp`
   ];
 
   useEffect(() => {

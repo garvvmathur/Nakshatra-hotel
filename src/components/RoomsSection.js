@@ -6,19 +6,19 @@ const RoomsSection = () => {
     {
       id: 1,
       type: 'Family',
-      image: `${process.env.PUBLIC_URL}/images/family-room1.png`,
+      image: `${process.env.PUBLIC_URL}/images/family-room1.webp`,
       description: 'Luxurious family room with 2 king-size beds and premium amenities'
     },
     {
       id: 2,
       type: 'Suite',
-      image: `${process.env.PUBLIC_URL}/images/suite-room2.png`,
+      image: `${process.env.PUBLIC_URL}/images/suite-room2.webp`,
       description: 'Comfortable suite with king-size bed along modern facilities'
     },
     {
       id: 3,
       type: 'Executive',
-      image: `${process.env.PUBLIC_URL}/images/executive-room.jpg`,
+      image: `${process.env.PUBLIC_URL}/images/executive-room.webp`,
       description: 'Executive room perfect for business travelers'
     }
   ];

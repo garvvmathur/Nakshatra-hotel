@@ -19,39 +19,39 @@ const GalleryPage = () => {
     suite: {
       title: "Suite Rooms",
       images: [
-        { id: 1, src: `${process.env.PUBLIC_URL}/images/suite-room1.png`, alt: 'Suite Area' },
-        { id: 2, src: `${process.env.PUBLIC_URL}/images/suite-room2.png`, alt: 'Suite Room' },
-        { id: 3, src: `${process.env.PUBLIC_URL}/images/suite-room3.png`, alt: 'Suite Amenities' },
-        { id: 4, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.png`, alt: 'Suite Bathroom' },
+        { id: 1, src: `${process.env.PUBLIC_URL}/images/suite-room1.webp`, alt: 'Suite Area' },
+        { id: 2, src: `${process.env.PUBLIC_URL}/images/suite-room2.webp`, alt: 'Suite Room' },
+        { id: 3, src: `${process.env.PUBLIC_URL}/images/suite-room3.webp`, alt: 'Suite Amenities' },
+        { id: 4, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.webp`, alt: 'Suite Bathroom' },
       ]
     },
     family: {
       title: "Family Rooms",
       images: [
-        { id: 5, src: `${process.env.PUBLIC_URL}/images/family-room1.png`, alt: 'Family suite Room' },
-        { id: 6, src: `${process.env.PUBLIC_URL}/images/family-room2.png`, alt: 'Family Suite Area' },
-        { id: 7, src: `${process.env.PUBLIC_URL}/images/family-room3.png`, alt: 'Family Suite Amenities' },
-        { id: 8, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.png`, alt: 'Suite Bathroom' },
+        { id: 5, src: `${process.env.PUBLIC_URL}/images/family-room1.webp`, alt: 'Family suite Room' },
+        { id: 6, src: `${process.env.PUBLIC_URL}/images/family-room2.webp`, alt: 'Family Suite Area' },
+        { id: 7, src: `${process.env.PUBLIC_URL}/images/family-room3.webp`, alt: 'Family Suite Amenities' },
+        { id: 8, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.webp`, alt: 'Suite Bathroom' },
       ]
     },
     executive: {
       title: "Executive Rooms",
       images: [
-        { id: 9, src: `${process.env.PUBLIC_URL}/images/gallery1.png`, alt: 'Luxury Suite Bedroom' },
-        { id: 10, src: `${process.env.PUBLIC_URL}/images/gallery2.png`, alt: 'Suite Living Area' },
-        { id: 11, src: `${process.env.PUBLIC_URL}/images/gallery3.png`, alt: 'Suite Bathroom' },
-        { id: 12, src: `${process.env.PUBLIC_URL}/images/gallery4.png`, alt: 'Suite Balcony' },
+        { id: 9, src: `${process.env.PUBLIC_URL}/images/gallery1.webp`, alt: 'Luxury Suite Bedroom' },
+        { id: 10, src: `${process.env.PUBLIC_URL}/images/gallery2.webp`, alt: 'Suite Living Area' },
+        { id: 11, src: `${process.env.PUBLIC_URL}/images/gallery3.webp`, alt: 'Suite Bathroom' },
+        { id: 12, src: `${process.env.PUBLIC_URL}/images/gallery4.webp`, alt: 'Suite Balcony' },
       ]
     },
     others: {
       title: "Surroundings and more",
       images: [
-        { id: 13, src: `${process.env.PUBLIC_URL}/images/gallery4.png`, alt: 'Hotel Exterior' },
-        { id: 14, src: `${process.env.PUBLIC_URL}/images/gallery5.png`, alt: 'Hotel Exterior Night-time' },
-        { id: 15, src: `${process.env.PUBLIC_URL}/images/gallery6.png`, alt: 'Hotel Lobby' },
-        { id: 16, src: `${process.env.PUBLIC_URL}/images/gallery7.png`, alt: 'Hotel Lobby' },
-        { id: 17, src: `${process.env.PUBLIC_URL}/images/gallery8.png`, alt: 'Hotel Lobby' },
-        { id: 18, src: `${process.env.PUBLIC_URL}/images/gallery9.png`, alt: 'Hotel Lobby' }
+        { id: 13, src: `${process.env.PUBLIC_URL}/images/gallery4.webp`, alt: 'Hotel Exterior' },
+        { id: 14, src: `${process.env.PUBLIC_URL}/images/gallery5.webp`, alt: 'Hotel Exterior Night-time' },
+        { id: 15, src: `${process.env.PUBLIC_URL}/images/gallery6.webp`, alt: 'Hotel Lobby' },
+        { id: 16, src: `${process.env.PUBLIC_URL}/images/gallery7.webp`, alt: 'Hotel Lobby' },
+        { id: 17, src: `${process.env.PUBLIC_URL}/images/gallery8.webp`, alt: 'Hotel Lobby' },
+        { id: 18, src: `${process.env.PUBLIC_URL}/images/gallery9.webp`, alt: 'Hotel Lobby' }
       ]
     }
   };

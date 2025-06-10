@@ -8,19 +8,19 @@ const ROOM_TYPES = [
     key: 'Suite',
     name: 'Suite',
     price: 3500,
-    image: `${process.env.PUBLIC_URL}/images/suite-room2.png`
+    image: `${process.env.PUBLIC_URL}/images/suite-room2.webp`
   },
   {
     key: 'Family',
     name: 'Family',
     price: 2500,
-    image: `${process.env.PUBLIC_URL}/images/family-room1.png`
+    image: `${process.env.PUBLIC_URL}/images/family-room1.webp`
   },
   {
     key: 'Executive',
     name: 'Executive',
     price: 2000,
-    image: `${process.env.PUBLIC_URL}/images/executive-room.jpg`
+    image: `${process.env.PUBLIC_URL}/images/executive-room.webp`
   }
 ];
 
