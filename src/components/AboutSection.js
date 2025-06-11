@@ -82,7 +82,7 @@ const AboutSection = () => {
               <strong>Hotel Nakshatra</strong><br/>
               Nakshatra Mall, Udaipur-Dungarpur Link Road<br/>
               Banswara, Rajasthan - 327001<br/>
-              <a href="tel:+919460900909">📞 Call: +91 9460 909 0909</a>
+              <a href="tel:+919460900909">📞 Call: +91 9460 90 0909</a>
             </address>
           </div>
         </div>

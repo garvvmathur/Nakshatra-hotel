@@ -55,6 +55,8 @@ const Header = () => {
               src={process.env.PUBLIC_URL + '/images/hotel-logo.svg'}
               alt="Nakshatra Hotel Logo" 
               className="logo-image"
+              height="55px"
+              width="auto"
               style={{ cursor: 'pointer' }}
             />
           </Link>
