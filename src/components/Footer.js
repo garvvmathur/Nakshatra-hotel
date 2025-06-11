@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 import EmailLink from './EmailLink.js';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -53,6 +54,18 @@ const Footer = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="footer-bottom">
+        <div className="footer-link-group">
+          <Link to="/privacy-policy" className="footer-link">
+            Privacy Policy
+          </Link>
+          <span style={{ color: '#bbb', margin: '0 0.5rem' }}>|</span>
+          <Link to="/terms-conditions" className="footer-link">
+            Terms & Conditions
+          </Link>
+        </div>
+        <p>Developed and maintained in-house by Nakshatra</p>
       </div>
     </footer>
   );

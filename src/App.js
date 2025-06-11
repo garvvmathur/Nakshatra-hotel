@@ -9,6 +9,8 @@ import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import GalleryPage from './components/GalleryPage';
 import BookingPage from './components/BookingPage';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsConditions from './components/TermsConditions';
 import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -58,6 +60,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
     </Router>
   );
