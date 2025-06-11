@@ -18,7 +18,7 @@ const RoomsSection = () => {
     {
       id: 3,
       type: 'Executive',
-      image: `${process.env.PUBLIC_URL}/images/executive-room.webp`,
+      image: `${process.env.PUBLIC_URL}/images/executive-room3.webp`,
       description: 'Executive room perfect for business travelers'
     }
   ];

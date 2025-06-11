@@ -37,10 +37,10 @@ const GalleryPage = () => {
     executive: {
       title: "Executive Rooms",
       images: [
-        { id: 9, src: `${process.env.PUBLIC_URL}/images/gallery1.webp`, alt: 'Luxury Suite Bedroom' },
-        { id: 10, src: `${process.env.PUBLIC_URL}/images/gallery2.webp`, alt: 'Suite Living Area' },
-        { id: 11, src: `${process.env.PUBLIC_URL}/images/gallery3.webp`, alt: 'Suite Bathroom' },
-        { id: 12, src: `${process.env.PUBLIC_URL}/images/gallery4.webp`, alt: 'Suite Balcony' },
+        { id: 9, src: `${process.env.PUBLIC_URL}/images/executive-room1.webp`, alt: 'Exec Room Area' },
+        { id: 10, src: `${process.env.PUBLIC_URL}/images/executive-room2.webp`, alt: 'Exec Room Amenities' },
+        { id: 11, src: `${process.env.PUBLIC_URL}/images/executive-room3.webp`, alt: 'Exec Room Bed' },
+        { id: 12, src: `${process.env.PUBLIC_URL}/images/executive-room-bathroom.webp`, alt: 'Exec Room Bathroom' },
       ]
     },
     others: {
