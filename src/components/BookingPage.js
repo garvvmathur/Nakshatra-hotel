@@ -7,19 +7,16 @@ const ROOM_TYPES = [
   {
     key: 'Suite',
     name: 'Suite',
-    price: 3500,
     image: `${process.env.PUBLIC_URL}/images/suite-room2.webp`
   },
   {
     key: 'Family',
     name: 'Family',
-    price: 2500,
     image: `${process.env.PUBLIC_URL}/images/family-room1.webp`
   },
   {
     key: 'Executive',
     name: 'Executive',
-    price: 2000,
     image: `${process.env.PUBLIC_URL}/images/executive-room.webp`
   }
 ];
@@ -132,7 +129,7 @@ const handleSubmit = async (e) => {
         breakfast: form.breakfast === 'with' ? 'Yes' : 'No',
         lunch: form.lunch ? 'Yes' : 'No',
         dinner: form.dinner ? 'Yes' : 'No',
-        totalPrice: totalPrice(),
+        totalPrice: 'bestPrice',
         specialRequests: form.special || 'None'
       };
 
@@ -163,19 +160,6 @@ const handleSubmit = async (e) => {
   }
 };
 
-
-
-  const selectedRoom = ROOM_TYPES.find(r => r.key === form.roomType);
-
-  const totalPrice = () => {
-    if (!selectedRoom) return 0;
-    let price = selectedRoom.price;
-    if (form.breakfast === 'with') price += 200;
-    if (form.lunch) price += 300;
-    if (form.dinner) price += 400;
-    return price;
-  };
-
   if (submitted) {
     return (
       <>
@@ -191,7 +175,7 @@ const handleSubmit = async (e) => {
             <p><strong>Check-in:</strong> {form.arrival}</p>
             <p><strong>Check-out:</strong> {form.departure}</p>
             <p><strong>Room Type:</strong> {form.roomType}</p>
-            <p><strong>Total Price:</strong> INR {totalPrice()} per night</p>
+            <p><strong>Total Price:</strong> Our management will contact you with best price.</p>
           </div>
         </div>
         <Footer />
@@ -205,7 +189,6 @@ const handleSubmit = async (e) => {
       <div className="booking-page">
         <h1>Book Your Stay</h1>
         <form className="booking-form" onSubmit={handleSubmit} noValidate>
-          {/* Your existing form fields remain exactly the same */}
           <div className="form-row">
             <label>
               Full Name*
@@ -279,7 +262,6 @@ const handleSubmit = async (e) => {
             </label>
           </div>
           
-          {/* Room Type Selection - keeping your existing code */}
           <div className="form-row roomtype-row">
             <div className="roomtype-label">Room Type*</div>
             <div className="roomtype-cards">
@@ -295,7 +277,8 @@ const handleSubmit = async (e) => {
                   <img src={room.image} alt={room.name} className="roomtype-image" />
                   <div className="roomtype-name">{room.name}</div>
                   <div className="roomtype-price">
-                    <span className="roomtype-price-premium">INR {room.price} per night</span>
+                    {/* <span className="roomtype-price-premium">INR {room.price} per night</span> */}
+                    <span className="roomtype-price-premium">Best price guaranteed</span>
                   </div>
                 </div>
               ))}
@@ -303,11 +286,9 @@ const handleSubmit = async (e) => {
             {errors.roomType && <span className="error">{errors.roomType}</span>}
           </div>
           
-          {/* Meal options - keeping your existing code */}
           {form.roomType && (
             <div className="form-row">
               <div className="room-options">
-                {/* Your existing meal cards code */}
                 <div
                   className={`meal-card${form.breakfast === 'with' ? ' selected' : ''}`}
                   tabIndex={0}
@@ -329,7 +310,7 @@ const handleSubmit = async (e) => {
                   }}
                 >
                   <div className="meal-title">Breakfast</div>
-                  <div className="meal-price">+INR 200</div>
+                  {/* <div className="meal-price">+INR 200</div> */}
                   <div className="meal-desc">{form.breakfast === 'with' ? 'Included' : 'Not included'}</div>
                 </div>
                 
@@ -354,7 +335,7 @@ const handleSubmit = async (e) => {
                   }}
                 >
                   <div className="meal-title">Lunch</div>
-                  <div className="meal-price">+INR 300</div>
+                  {/* <div className="meal-price">+INR 300</div> */}
                   <div className="meal-desc">{form.lunch ? 'Included' : 'Not included'}</div>
                 </div>
                 
@@ -379,12 +360,13 @@ const handleSubmit = async (e) => {
                   }}
                 >
                   <div className="meal-title">Dinner</div>
-                  <div className="meal-price">+INR 400</div>
+                  {/* <div className="meal-price">+INR 400</div> */}
                   <div className="meal-desc">{form.dinner ? 'Included' : 'Not included'}</div>
                 </div>
               </div>
               <div className="room-price" style={{marginTop: "1.2rem", width: "100%"}}>
-                <strong>Total per night: INR {totalPrice()}</strong>
+                {/* <strong>Total per night: INR {totalPrice()}</strong> */}
+                <strong>Note: Management will contact you with best price.</strong>
               </div>
             </div>
           )}
@@ -398,19 +380,17 @@ const handleSubmit = async (e) => {
           <div className="form-row">
             <label className="checkbox-label">
               <input type="checkbox" name="agree" checked={form.agree} onChange={handleChange} />
-              I understand this is a booking request and not a confirmed reservation. I agree to the privacy policy.
+              I understand this is a booking request and not a confirmed reservation. I agree to the privacy policy and terms & conditions.
               {errors.agree && <span className="error">{errors.agree}</span>}
             </label>
           </div>
           
-          {/* Show form error above submit button */}
           {showFormError && (
             <div className="form-error-banner">
               Please fill all required fields correctly before submitting.
             </div>
           )}
           
-          {/* Updated submit button with loading state */}
           <button type="submit" className="submit-btn" disabled={isSubmitting}>
             {isSubmitting ? '⏳ Submitting...' : '📋 Submit Booking Request'}
           </button>

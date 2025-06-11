@@ -73,13 +73,6 @@
   justify-content: center; /* Center the meal cards */
 }
 
-.room-options-row {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
 .room-options label {
   margin-bottom: 0;
   font-weight: 500;
@@ -133,15 +126,6 @@
 .room-options .checkbox-group input[type="checkbox"]:focus + label {
   border-color: #e74c3c;
   background: #fbeeea;
-}
-
-.room-price {
-  margin-top: 0.7rem;
-  color: #e74c3c;
-  font-weight: 600;
-  font-size: 1.1rem;
-  align-self: flex-end;
-  text-align: right;
 }
 
 .checkbox-label {
@@ -221,15 +205,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-}
-
-.roomtype-label {
-  font-family: var(--font-body); /* Match other labels */
-  font-weight: 500;
-  color: #2c3e50;
-  font-size: 1rem;
-  margin-bottom: 0.2rem; /* Reduce space below label */
-  margin-left: 0;        /* Align with cards */
 }
 
 .roomtype-cards {
@@ -362,19 +337,6 @@
   margin-bottom: 0.3rem;
 }
 
-.meal-price {
-  font-family: var(--font-body);
-  font-size: 0.93rem;
-  color: #888;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  background: #f8f9fa;
-  border-radius: 6px;
-  padding: 0.18em 0.7em;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
 .meal-desc {
   font-size: 0.97rem;
   color: #666;
@@ -497,11 +459,7 @@
   .meal-title {
     font-size: 1rem;
   }
-  .meal-price {
-    font-size: 0.85rem;
-    padding: 0.12em 0.5em;
-    margin-bottom: 0.2rem;
-  }
+ 
   .meal-desc {
     font-size: 0.92rem;
   }

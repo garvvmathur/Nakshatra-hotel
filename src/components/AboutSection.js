@@ -1,4 +1,4 @@
-// AboutSection.js - Updated with SEO content
+// AboutSection.js - Updated
 import React from 'react';
 import './AboutSection.css';
 
@@ -16,7 +16,6 @@ const AboutSection = () => {
               the <strong>best hotel in Banswara</strong> offering unmatched convenience in the heart 
               of Rajasthan's business and cultural hub.
             </p>
-            
             <p>
               As a distinguished <strong>3-star business hotel in Banswara</strong>, we cater to 
               discerning business travelers, families, and tourists seeking 
@@ -24,15 +23,14 @@ const AboutSection = () => {
               Nakshatra Mall provides guests with direct access to premium shopping, dining at 
               our rooftop restaurant, multiplex entertainment, and comprehensive business facilities.
             </p>
-            
             <p>
-              What sets us apart as the <strong>top luxury hotel near Banswara</strong> is our 
-              commitment to providing <strong>budget-friendly accommodation</strong> without 
-              compromising on quality. Every fully air-conditioned room features modern amenities, 
-              complemented by our 24/7 room service, free WiFi, and round-the-clock availability 
-              that makes us the <strong>most reliable hotel in Banswara</strong>.
+              <strong>Hotel Nakshatra features 19 fully air-conditioned (AC) rooms</strong>, 
+              each designed for maximum comfort and equipped with modern amenities. What sets 
+              us apart as the <strong>top luxury hotel near Banswara</strong> is our commitment 
+              to providing <strong>budget-friendly accommodation</strong> without compromising 
+              on quality. Every room is complemented by our 24/7 room service, free WiFi, and 
+              round-the-clock availability that makes us the <strong>most reliable hotel in Banswara</strong>.
             </p>
-            
             <p>
               Our strategic position on the main Udaipur-Dungarpur corridor ensures excellent 
               connectivity for business meetings, with our dedicated business halls and banquet 
@@ -41,15 +39,12 @@ const AboutSection = () => {
               perfect base with taxi-on-call services, doctor-on-call facilities, and personalized 
               concierge assistance.
             </p>
-            
             <p>
               Experience the perfect blend of <strong>affordable luxury, warm Rajasthani hospitality, 
               and modern convenience</strong> at Hotel Nakshatra – where every stay becomes a 
               cherished memory. Book your stay at Banswara's most trusted accommodation partner today.
             </p>
           </div>
-          
-          {/* SEO-friendly highlights */}
           <div className="about-highlights">
             <div className="highlight-item">
               <h4>🏢 Prime Business Location</h4>
@@ -69,13 +64,10 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-        
         <div className="about-image">
           <img 
             src={process.env.PUBLIC_URL + '/images/hotel-exterior.webp'} 
             alt="Hotel Nakshatra Banswara - Best Luxury Hotel in Banswara Rajasthan" />
-          
-          {/* Location info for local SEO */}
           <div className="location-info">
             <h4>📍 Our Location</h4>
             <address>
