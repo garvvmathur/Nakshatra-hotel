@@ -23,6 +23,7 @@ const GalleryPage = () => {
         { id: 2, src: `${process.env.PUBLIC_URL}/images/suite-room2.webp`, alt: 'Suite Room' },
         { id: 3, src: `${process.env.PUBLIC_URL}/images/suite-room3.webp`, alt: 'Suite Amenities' },
         { id: 4, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.webp`, alt: 'Suite Bathroom' },
+        { id: 19, src: `${process.env.PUBLIC_URL}/images/suite-room-balcony.webp`, alt: 'Suite Balcony' }
       ]
     },
     family: {
@@ -32,6 +33,7 @@ const GalleryPage = () => {
         { id: 6, src: `${process.env.PUBLIC_URL}/images/family-room2.webp`, alt: 'Family Suite Area' },
         { id: 7, src: `${process.env.PUBLIC_URL}/images/family-room3.webp`, alt: 'Family Suite Amenities' },
         { id: 8, src: `${process.env.PUBLIC_URL}/images/suite-room-bathroom.webp`, alt: 'Suite Bathroom' },
+        { id: 20, src: `${process.env.PUBLIC_URL}/images/family-room-balcony.webp`, alt: 'Family Room Balcony' }
       ]
     },
     executive: {
