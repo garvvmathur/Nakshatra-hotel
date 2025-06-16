@@ -52,7 +52,7 @@ const Header = () => {
       <div className="logo">
           <Link to="/">
             <img 
-              src={process.env.PUBLIC_URL + '/images/hotel-logo.svg'}
+              src={process.env.PUBLIC_URL + '/images/hotel-logo-nobg.svg'}
               alt="Nakshatra Hotel Logo" 
               className="logo-image"
               height="55px"
