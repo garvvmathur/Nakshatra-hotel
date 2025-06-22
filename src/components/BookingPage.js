@@ -165,7 +165,7 @@ const handleSubmit = async (e) => {
     return (
       <>
         <Helmet>
-          <link rel="canonical" href="https://www.nakshatrahotel.co.in/booking" />
+          <link rel="canonical" href="https://nakshatrahotel.co.in/booking" />
         </Helmet>
         <Header />
         <div className="booking-confirmation">
@@ -190,7 +190,7 @@ const handleSubmit = async (e) => {
   return (
     <>
       <Helmet>
-        <link rel="canonical" href="https://www.nakshatrahotel.co.in/booking" />
+        <link rel="canonical" href="https://nakshatrahotel.co.in/booking" />
       </Helmet>
       <Header />
       <div className="booking-page">

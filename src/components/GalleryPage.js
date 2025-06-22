@@ -66,7 +66,7 @@ const GalleryPage = () => {
   return (
     <div className="gallery-page">
       <Helmet>
-        <link rel="canonical" href="https://www.nakshatrahotel.co.in/gallery" />
+        <link rel="canonical" href="https://nakshatrahotel.co.in/gallery" />
       </Helmet>
       <Header />
       <div className="gallery-hero">

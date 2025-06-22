@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 const TermsConditions = () => (
   <>
     <Helmet>
-      <link rel="canonical" href="https://www.nakshatrahotel.co.in/terms-conditions" />
+      <link rel="canonical" href="https://nakshatrahotel.co.in/terms-conditions" />
     </Helmet>
     <Header />
     <main className="terms-conditions">
