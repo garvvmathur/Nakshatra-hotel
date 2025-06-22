@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import './BookingPage.css';
+import { Helmet } from 'react-helmet';
 
 const ROOM_TYPES = [
   {
@@ -163,6 +164,9 @@ const handleSubmit = async (e) => {
   if (submitted) {
     return (
       <>
+        <Helmet>
+          <link rel="canonical" href="https://www.nakshatrahotel.co.in/booking" />
+        </Helmet>
         <Header />
         <div className="booking-confirmation">
           <h2>🎉 Thank you for your booking request!</h2>
@@ -185,6 +189,9 @@ const handleSubmit = async (e) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href="https://www.nakshatrahotel.co.in/booking" />
+      </Helmet>
       <Header />
       <div className="booking-page">
         <h1>Book Your Stay</h1>

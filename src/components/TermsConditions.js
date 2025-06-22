@@ -2,9 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import './TermsConditions.css';
+import { Helmet } from 'react-helmet';
+
 
 const TermsConditions = () => (
   <>
+    <Helmet>
+      <link rel="canonical" href="https://www.nakshatrahotel.co.in/terms-conditions" />
+    </Helmet>
     <Header />
     <main className="terms-conditions">
       <h1>Terms & Conditions</h1>

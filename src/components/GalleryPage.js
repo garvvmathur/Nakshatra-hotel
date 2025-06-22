@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import './GalleryPage.css';
+import { Helmet } from 'react-helmet';
+
 
 const GalleryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -63,6 +65,9 @@ const GalleryPage = () => {
 
   return (
     <div className="gallery-page">
+      <Helmet>
+        <link rel="canonical" href="https://www.nakshatrahotel.co.in/gallery" />
+      </Helmet>
       <Header />
       <div className="gallery-hero">
         <h1>HOTEL GALLERY</h1>
